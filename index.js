@@ -5,6 +5,7 @@ const consign = require("consign");
 const port = 5000;
 
 consign()
+  .then("./config/passport.js")
   .then("./config/middlewares.js")
   .then("./api")
   .then("./config/routs.js")

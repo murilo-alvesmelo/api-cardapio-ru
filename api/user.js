@@ -19,9 +19,16 @@ module.exports = (app) => {
           email: req.body.email,
           password,
         })
-        .then((_) => res.status(204).send())
+        .then((_) => res.status(201).send())
         .catch((err) => res.status(400).json(err));
     });
   };
-  return { save };
+
+  const getUser = (req, res) => {
+    app
+      .db("users")
+      .then((users) => res.status(200).json(users))
+      .catch((err) => res.status(400).send(err));
+  };
+  return { save, getUser };
 };
