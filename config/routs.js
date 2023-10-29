@@ -5,14 +5,14 @@ module.exports = (app) => {
 
   app
     .route("/cardapio")
-    .all(app.config.passport.authenticate())
     .get(app.api.cardapio.getCardapio)
+    .all(app.config.passport.authenticate())
     .post(app.api.cardapio.saveCardapio);
 
   app
     .route("/cardapio/:id")
-    .all(app.config.passport.authenticate())
     .get(app.api.cardapio.getOneCardapio)
+    .all(app.config.passport.authenticate())
     .delete(app.api.cardapio.removeCardapio)
     .put(app.api.cardapio.updateCardapio);
 };
