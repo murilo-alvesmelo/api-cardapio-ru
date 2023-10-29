@@ -103,7 +103,7 @@ exports.up = function (knex) {
   });
 };
 ```
-**Entidades da tabela tasks:**
+**Entidades da tabela cardapio:**
 
 ```javascript
 
