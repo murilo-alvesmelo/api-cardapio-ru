@@ -1,7 +1,11 @@
 module.exports = (app) => {
   app.post("/signup", app.api.user.save);
   app.post("/login", app.api.auth.login);
-  app.get("/getUsers", app.api.user.getUser);
+
+  app
+    .route("/users")
+    .all(app.config.passport.authenticate())
+    .get(app.api.user.getUser);
 
   app
     .route("/cardapio")
