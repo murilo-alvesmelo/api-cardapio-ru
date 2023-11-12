@@ -4,7 +4,7 @@ module.exports = (app) => {
   const getCardapio = (req, res) => {
     const date = req.query.date
       ? req.query.date
-      : moment().endOf("day").toDate();
+      : moment().endOf("year").toDate();
 
     app
       .db("cardapio")
