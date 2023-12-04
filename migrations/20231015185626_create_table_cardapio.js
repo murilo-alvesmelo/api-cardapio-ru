@@ -10,6 +10,8 @@ exports.up = function (knex) {
     table.string("guarnicao");
     table.string("leguminosas");
     table.string("carboidrato");
+    table.string("tipo")
+    table.string("sobremesa")
     table.dateTime("estimateAt");
     table.integer("userId").references("id").inTable("users").notNullable();
   });
